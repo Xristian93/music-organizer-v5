@@ -70,7 +70,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")";
+        return artist + ": " + title + "  (file: " + filename + ")" + " .Number of reproductions : " + playCount;
     }
     
     /**
@@ -89,14 +89,14 @@ public class Track
     /**
      * Reset the playCount to 0
      */
-    private void resetPlayCount(){
+    public void resetPlayCount(){
         playCount = 0;
     }
     
     /**
      * Increase the playCount by 1
      */
-    private void increasePlayCount(){
+    public void increasePlayCount(){
         playCount++;
     }
 }
