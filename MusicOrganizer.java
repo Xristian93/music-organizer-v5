@@ -180,4 +180,10 @@ public class MusicOrganizer
             }
         }
     }
+
+    public void setTrackYear(int index, int year){
+        if (index >= 0 && index < tracks.size()){
+            tracks.get(index).setYear(year);
+        }
+    }
 }

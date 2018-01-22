@@ -13,8 +13,11 @@ public class Track
     private String title;
     // Where the track is stored.
     private String filename;
+    // Contador de reproducciones
     private int playCount;
-    
+    // Año de publicacion
+    private int year;
+
     /**
      * Constructor for objects of class Track.
      * @param artist The track's artist.
@@ -24,8 +27,10 @@ public class Track
     public Track(String artist, String title, String filename)
     {
         setDetails(artist, title, filename);
+        playCount = 0;
+        year = 0;
     }
-    
+
     /**
      * Constructor for objects of class Track.
      * It is assumed that the file name cannot be
@@ -35,8 +40,10 @@ public class Track
     public Track(String filename)
     {
         setDetails("unknown", "unknown", filename);
+        playCount = 0;
+        year = 0;
     }
-    
+
     /**
      * Return the artist.
      * @return The artist.
@@ -45,7 +52,7 @@ public class Track
     {
         return artist;
     }
-    
+
     /**
      * Return the title.
      * @return The title.
@@ -54,7 +61,7 @@ public class Track
     {
         return title;
     }
-    
+
     /**
      * Return the file name.
      * @return The file name.
@@ -63,16 +70,16 @@ public class Track
     {
         return filename;
     }
-        
+
     /**
      * Return details of the track: artist, title and file name.
      * @return The track's details.
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")" + " .Number of reproductions : " + playCount;
+        return artist + ": " + title + "  (file: " + filename + ")" + " .Number of reproductions : " + playCount + ". Año: " + year;
     }
-    
+
     /**
      * Set details of the track.
      * @param artist The track's artist.
@@ -85,18 +92,32 @@ public class Track
         this.title = title;
         this.filename = filename;
     }
-    
+
     /**
      * Reset the playCount to 0
      */
     public void resetPlayCount(){
         playCount = 0;
     }
-    
+
     /**
      * Increase the playCount by 1
      */
     public void increasePlayCount(){
         playCount++;
+    }
+
+    /**
+     * Get the year
+     */
+    public int getYear(){
+        return year;
+    }
+
+    /**
+     * Set the year
+     */
+    public void setYear(int year){
+        this.year = year;
     }
 }
