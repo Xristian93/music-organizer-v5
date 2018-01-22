@@ -229,4 +229,15 @@ public class MusicOrganizer
             }
         }
     }
+    
+    public void removeByTitle(String searchArtist){
+        Iterator<Track> it = tracks.iterator();
+        while (it.hasNext()){
+            Track t = it.next();
+            String title = t.getTitle();
+            if (title.toLowerCase().equals(searchArtist.toLowerCase())){
+                it.remove();
+            }
+        }
+    }
 }
